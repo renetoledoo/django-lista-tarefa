@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Título da Página{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="flex bg-white-100">
+    <div class="w-64 bg-gray-800 text-white h-screen">
+        <div class="flex items-center justify-center h-20">
+            <h1 class="text-xl font-bold">
+                Sys<span class="bg-blue-500 text-white px-1">Manager</span>
+            </h1>
+        </div>
+
+        <nav class="mt-6">
+            <a href="#" class="flex items-center rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                aria-current="page">Kanban Board</a>
+        </nav>
+    </div>
+
+    <div class="flex-col w-full h-full">
+        {% block conteudo %}{% endblock %}
+    </div>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="{% static 'index.js' %}"></script>
+</body>
+
+</html>
